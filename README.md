@@ -11,5 +11,5 @@ App generated with:
 ## Issue:
 When I switched static module federation to dynamic it appears that `-` character is not allowed in remote name.
 
-![Error](../screenshots/error.png?raw=true)
-![Issue place](../screenshots/issue-place.png?raw=true)
+![Error](./screenshots/error.png?raw=true)
+![Issue place](./screenshots/issue-place.png?raw=true)
