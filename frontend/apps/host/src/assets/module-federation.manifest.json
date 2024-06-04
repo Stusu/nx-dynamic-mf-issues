@@ -1,3 +1,4 @@
 {
-    "first_remote": "http://localhost:4201"
-  }
+  "first_remote": "http://localhost:4201",
+  "remote_outside_workspace": "http://localhost:4202"
+}
