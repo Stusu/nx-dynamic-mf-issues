@@ -33,3 +33,5 @@ export default config;
 ```
 what resulted with build error:
 ![Build error](./screenshots/build-error.png?raw=true)
+
+The issue can be fixed with remote name change like here: https://github.com/Stusu/nx-dynamic-mf-issues/pull/1, but it should be not allowed upfront to set such name, or console should show some warning about it.
