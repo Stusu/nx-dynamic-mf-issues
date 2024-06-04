@@ -5,7 +5,7 @@
   "projectType": "application",
   "tags": [],
   "implicitDependencies": [
-    "first-remote"
+    "first_remote"
   ],
   "targets": {
     "build": {
