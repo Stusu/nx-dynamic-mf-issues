@@ -5,7 +5,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import NxWelcome from './nx-welcome';
 
 const FirstRemote = React.lazy(() =>
-  loadRemoteModule('first-remote', './Module')
+  loadRemoteModule('first_remote', './Module')
 );
 
 

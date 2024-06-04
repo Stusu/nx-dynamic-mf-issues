@@ -1,5 +1,5 @@
 {
-  "name": "first-remote",
+  "name": "first_remote",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/first-remote/src",
   "projectType": "application",
@@ -52,16 +52,16 @@
       "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "first-remote:build",
+        "buildTarget": "first_remote:build",
         "hmr": true,
         "port": 4201
       },
       "configurations": {
         "development": {
-          "buildTarget": "first-remote:build:development"
+          "buildTarget": "first_remote:build:development"
         },
         "production": {
-          "buildTarget": "first-remote:build:production",
+          "buildTarget": "first_remote:build:production",
           "hmr": false
         }
       }
@@ -86,10 +86,10 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "first-remote:build:development"
+          "buildTarget": "first_remote:build:development"
         },
         "production": {
-          "buildTarget": "first-remote:build:production"
+          "buildTarget": "first_remote:build:production"
         }
       }
     }
