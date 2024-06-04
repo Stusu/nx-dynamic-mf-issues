@@ -1,10 +1,13 @@
 import * as React from 'react';
+import { loadRemoteModule } from '@nx/react/mf';
+import { Link, Route, Routes } from 'react-router-dom';
 
 import NxWelcome from './nx-welcome';
 
-import { Link, Route, Routes } from 'react-router-dom';
+const FirstRemote = React.lazy(() =>
+  loadRemoteModule('first-remote', './Module')
+);
 
-const FirstRemote = React.lazy(() => import('first-remote/Module'));
 
 export function App() {
   return (
@@ -15,7 +18,7 @@ export function App() {
         </li>
 
         <li>
-          <Link to="/first-remote">FirstRemote</Link>
+          <Link to="/first-remote">First remote</Link>
         </li>
       </ul>
       <Routes>

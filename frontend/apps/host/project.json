@@ -4,6 +4,9 @@
   "sourceRoot": "apps/host/src",
   "projectType": "application",
   "tags": [],
+  "implicitDependencies": [
+    "first-remote"
+  ],
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",
@@ -51,7 +54,8 @@
       "options": {
         "buildTarget": "host:build",
         "hmr": true,
-        "port": 4200
+        "port": 4200,
+        "spa": true
       },
       "configurations": {
         "development": {
