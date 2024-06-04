@@ -1,0 +1,97 @@
+{
+  "name": "first-remote",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/first-remote/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/first-remote",
+        "index": "apps/first-remote/src/index.html",
+        "baseHref": "/",
+        "main": "apps/first-remote/src/main.ts",
+        "tsConfig": "apps/first-remote/tsconfig.app.json",
+        "assets": [
+          "apps/first-remote/src/favicon.ico",
+          "apps/first-remote/src/assets"
+        ],
+        "styles": ["apps/first-remote/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "apps/first-remote/webpack.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/first-remote/src/environments/environment.ts",
+              "with": "apps/first-remote/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/first-remote/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "first-remote:build",
+        "hmr": true,
+        "port": 4201
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "first-remote:build:development"
+        },
+        "production": {
+          "buildTarget": "first-remote:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/first-remote/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "first-remote:build",
+        "watch": false,
+        "port": 4201
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "first-remote:build:development"
+        },
+        "production": {
+          "buildTarget": "first-remote:build:production"
+        }
+      }
+    }
+  }
+}
